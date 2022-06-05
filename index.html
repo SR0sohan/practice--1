@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue js practice</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <p>
+            {{title}}
+        </p>
+        <p>
+            {{isItTrue}}
+        </p>
+        <p>
+            {{cars[0]}}
+        </p>
+        <p>
+            {{robot.name}}
+        </p>
+        <p>
+            {{greetings()}}
+        </p>
+        <strong>
+            {{intro()}}
+        </strong>
+        <p>
+            {{greeting()}}
+        </p>
+        <img :src="src" :alt="alt"><br>
+        <a :href="link" target="blank">click me</a>
+        <hr>
+        <!-- :(colon) is the short hand of v-vind -->
+        <strong v-text="kotha"></strong>
+        <p v-html="rumu"></p>
+        <img :src="crush" :alt="altr">
+        <br>
+        <i v-text="mssg"></i>
+        <p v-if="userAge >= expectedAge">
+            She is ready.
+        </p>
+        <p v-else-if="user==='Rocky'">
+            Yes, she is ready.
+        </p>
+        <p v-else>
+            she is not ready.
+        </p>
+
+        <p v-if="changeUser()">
+            Damn you, She is ready.
+        </p>
+        <p v-else>
+            she is not ready.
+        </p>
+        <div v-for="(car,index) in cars">
+            {{index}} : {{car}}
+        </div>
+        <h4 v-for="(value, index, key) in details">
+            {{key}}:{{index}}:{{value}}
+        </h4>
+        <div>
+            <h2>
+                {{user}}
+            </h2>
+            <h1 v-once>
+                {{user}}
+            </h1>
+            {{updateName()}}
+        </div>
+        <div @mousemove="getCoord" class="box">
+            <h1>Hover me</h1>
+        </div>
+        <p>X: {{x}}</p>
+        <p>Y: {{y}}</p>
+        <h3>
+            {{love}}
+        </h3>
+
+        <!-- @ is the short hand of v-on  -->
+
+        <button @click.right="reName('Sulota')">click on</button>
+        <hr>
+        <form @submit.prevent="handleForm">
+            <label>First Name:</label>
+            <input type="text" v-model="formData.firstName">
+            <hr>
+            <label>last Name:</label>
+            <input type="text" v-model="formData.lastName">
+            <hr>
+            <button type="submit">submit</button>
+        </form>
+        <hr>
+        <div>
+            <button @click='a++'>Add A</button>
+            <button @click='b++'>Add B</button>
+            <p>A = {{a}}</p>
+            <p>B = {{b}}</p>
+
+            <p>Salary + A ={{addToA}}</p>
+            <p>Salary + B ={{addToB}}</p>
+        </div>
+    </div>
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+<style>
+    .box{
+        background-color: yellow;
+        width: 400px;
+        height: 400px;
+    }
+</style>
+</html>
